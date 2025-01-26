@@ -1,10 +1,15 @@
-<div *ngIf="formData">
-  <h2>Zkontrolujte pečlivě svá vyplněná data:</h2>
-  <p>Název Společnosti: {{formData.companyName}}</p>
-  <p>Adresa: {{formData.companyAdress}}</p>
-  <p>Email: {{formData.companyEmail}}</p>
-  <p>Tel. kontakt: {{formData.companyTel}}</p>
-  <p>IČO: {{formData.companyIco}}</p>
+<div *ngIf="formData" class="data-container">
+  <h2 class="data-title">Zkontrolujte pečlivě svá vyplněná data.</h2>
+
+  <p class="data-item"><strong>Název Společnosti:</strong> {{ formData.companyName }}</p>
+  <p class="data-item"><strong>Adresa:</strong> {{ formData.companyAdress }}</p>
+  <p class="data-item"><strong>Email:</strong> {{ formData.companyEmail }}</p>
+  <p class="data-item"><strong>Tel. kontakt:</strong> {{ formData.companyTel }}</p>
+  <p class="data-item"><strong>IČO:</strong> {{ formData.companyIco }}</p>
+
+  <div class="data-actions">
+    <a routerLink="/client-form" class="action-link">Upravit</a>
+    <button (click)="confirmClientData()" class="action-button">Potvrzuji správnost údajů</button>
+  </div>
 </div>
-<a routerLink="/client-form">Upravit</a>
-<button (click)="confirmClientData()">Potvrzuji správnost údajů</button>
+
