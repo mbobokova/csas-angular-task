@@ -1,7 +1,7 @@
-import { Component, OnInit, OnDestroy  } from '@angular/core';
+import { Component  } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-// import { CacheService } from './../../services/cache.service'
+
 
 @Component({
   selector: 'app-client-form',
@@ -16,13 +16,13 @@ export class ClientFormComponent {
   constructor(
     private fb:FormBuilder,
     private router: Router,
-    // private cacheService: CacheService, // Inject CacheService
+
   ) {
     this.form = this.fb.group({
       companyName: ['', Validators.required],
       companyAdress: ['', Validators.required],
       companyEmail: ['', [Validators.required, Validators.email] ],
-      companyTel: ['', [Validators.required, Validators.minLength(9)]],
+      companyTel: ['+420 ', [Validators.required, Validators.minLength(9)]],
       companyIco: ['', Validators.required],      
     })
   }
@@ -44,9 +44,5 @@ export class ClientFormComponent {
     if (this.form.valid) {
          this.router.navigate(['/validation']);      
     }
-  }
-
-  ngOnDestroy() {
-    console.log('Component is being destroyed');
   }
 }
