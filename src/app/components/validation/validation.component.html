@@ -1,1 +1,10 @@
-<p>validation works!</p>
+<div *ngIf="formData">
+  <h2>Zkontrolujte pečlivě svá vyplněná data:</h2>
+  <p>Název Společnosti: {{formData.companyName}}</p>
+  <p>Adresa: {{formData.companyAdress}}</p>
+  <p>Email: {{formData.companyEmail}}</p>
+  <p>Tel. kontakt: {{formData.companyTel}}</p>
+  <p>IČO: {{formData.companyIco}}</p>
+</div>
+<a routerLink="/client-form">Upravit</a>
+<button (click)="confirmClientData()">Potvrzuji správnost údajů</button>
