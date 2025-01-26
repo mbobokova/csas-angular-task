@@ -1,0 +1,22 @@
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.3s;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .green {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .red {
+    background-color: #f44336;
+    color: white;
+  }
