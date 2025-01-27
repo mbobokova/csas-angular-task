@@ -39,7 +39,7 @@ export class ClientFormComponent {
       localStorage.setItem('formData', JSON.stringify(value));
     });
   }
-
+  // After ngSubmit redirect to validation page
   send() {
     if (this.form.valid) {
          this.router.navigate(['/validation']);      

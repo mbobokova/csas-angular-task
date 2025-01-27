@@ -23,19 +23,16 @@ export class ValidationComponent {
       this.formData = JSON.parse(data)
     }
   }
-  confirmClientData() {
-    // send data to backend
-    
-    this.http.post('http://localhost:4000/api/submit-form', this.formData).subscribe(
-      (response) => {
-        console.log('Data sent successfully', response);
-        this.router.navigate(['/submission-confirmation']);
-      },
-      (error) => {
-        console.error('Error sending data', error);
-      }
-    );
-    
-    this.router.navigate(['/submission-confirmation']);
+  // Confirm and send data to backend
+  async confirmClientData() {
+    try {
+      const response = await this.http.post('http://localhost:4000/api/submit-form', this.formData).toPromise();
+      console.log('Data sent successfully', response);
+      // Navigate to confirmation page after successful submission
+      this.router.navigate(['/submission-confirmation']);
+    } catch (error) {
+      console.error('Error sending data', error);
+      // Handle error, e.g., show a notification to the user
+    }
   }
 }
