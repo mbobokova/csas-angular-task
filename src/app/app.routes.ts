@@ -5,7 +5,7 @@ import { ClientFormComponent } from './components/client-form/client-form.compon
 export const routes: Routes = [
     { 
         path: 'client-form', 
-        component: ClientFormComponent
+        loadComponent: () => import('./components/client-form/client-form.component').then(m => m.ClientFormComponent)
     },
     { 
         path: 'validation', 
