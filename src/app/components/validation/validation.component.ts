@@ -25,14 +25,18 @@ export class ValidationComponent {
   }
   // Confirm and send data to backend
   async confirmClientData() {
+    this.router.navigate(['/submission-confirmation']);
+    `
+    // For API, but I am not able to build server
     try {
       const response = await this.http.post('http://localhost:4000/api/submit-form', this.formData).toPromise();
       console.log('Data sent successfully', response);
       // Navigate to confirmation page after successful submission
-      this.router.navigate(['/submission-confirmation']);
+      
     } catch (error) {
       console.error('Error sending data', error);
-      // Handle error, e.g., show a notification to the user
+     
     }
+    `
   }
-}
+}git a
